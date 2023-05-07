@@ -6,6 +6,7 @@ message GetBalanceRequest {
   string platform_id = 1;
   string operator_id = 2;
   string player_id = 3;
+  string game_id = 4;
 }
 
 message GetBalanceResponse {

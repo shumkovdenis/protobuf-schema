@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package session.v1;
+
+message CreateSessionRequest {
+  string platform_id = 1;
+}
+
+message CreateSessionResponse {
+  string token = 1;
+}
+
+service SessionService {
+  rpc CreateSession(CreateSessionRequest) returns (CreateSessionResponse);
+}

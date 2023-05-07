@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.2.1...v1.3.0) (2023-05-07)
+
+
+### Features
+
+* **error_details.proto:** add RollbackInfo message to integration.v1 package to provide transaction_id for rollback functionality ([774385a](https://github.com/shumkovdenis/protobuf-schema/commit/774385ac09403d8ed71751217b81c39c8a16ed14))
+
 ## [1.2.1](https://github.com/shumkovdenis/protobuf-schema/compare/v1.2.0...v1.2.1) (2023-05-07)
 
 

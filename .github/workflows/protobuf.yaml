@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
+
       - uses: bufbuild/buf-setup-action@v1
       - uses: bufbuild/buf-lint-action@v1
         with:
@@ -23,10 +24,12 @@ jobs:
         with:
           input: 'proto'
           against: '${{ github.server_url }}/${{ github.repository }}.git#branch=main,ref=HEAD~1,subdir=proto'
+
       - run: |
           rm -rf gen
           rm -rf lib
           buf generate proto
+
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'chore: update generated files'

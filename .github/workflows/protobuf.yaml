@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  lint:
+  protobuf:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,11 +18,15 @@ jobs:
       - uses: bufbuild/buf-setup-action@v1
       - uses: bufbuild/buf-lint-action@v1
         with:
-          input: proto
+          input: 'proto'
+      - uses: bufbuild/buf-breaking-action@v1
+        with:
+          input: 'proto'
+          against: '${{ github.server_url }}/${{ github.repository }}.git#branch=main,ref=HEAD~1,subdir=proto'
       - run: |
           rm -rf gen
           rm -rf lib
           buf generate proto
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore: update generated files"
+          commit_message: 'chore: update generated files'

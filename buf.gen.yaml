@@ -12,12 +12,12 @@ plugins:
     out: gen
     opt: 
       - paths=source_relative
-  # - plugin: buf.build/bufbuild/es:v1.2.0
-  #   out: lib
-  #   opt:
-  #     - target=ts
-  # - plugin: buf.build/bufbuild/connect-es:v0.8.6
-  #   out: lib
-  #   opt:
-  #     - target=ts
-  #     - import_extension=none
+  - plugin: buf.build/bufbuild/es:v1.2.0
+    out: lib
+    opt:
+      - target=ts
+  - plugin: buf.build/bufbuild/connect-es:v0.8.6
+    out: lib
+    opt:
+      - target=ts
+      - import_extension=none

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.1.0...v1.2.0) (2023-05-07)
+
+
+### Features
+
+* add conditional checkout action to release.yml workflow to only run when a release is created ([006905f](https://github.com/shumkovdenis/protobuf-schema/commit/006905ff31bb77a3a3cf96fb5a9a3aed2bf039d2))
+
 ## [1.1.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.0.0...v1.1.0) (2023-05-07)
 
 

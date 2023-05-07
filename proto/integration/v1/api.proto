@@ -3,7 +3,9 @@ syntax = "proto3";
 package integration.v1;
 
 message GetBalanceRequest {
-  string player_id = 1;
+  string platform_id = 1;
+  string operator_id = 2;
+  string player_id = 3;
 }
 
 message GetBalanceResponse {

@@ -1,0 +1,28 @@
+name: Protobuf
+
+on: 
+  pull_request:
+    paths:
+      - 'proto/**'
+
+permissions:
+  contents: write
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: bufbuild/buf-setup-action@v1
+      - uses: bufbuild/buf-lint-action@v1
+        with:
+          input: proto
+      - run: |
+          rm -rf gen
+          rm -rf lib
+          buf generate proto
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: update generated files"

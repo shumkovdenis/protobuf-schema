@@ -1,0 +1,23 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/shumkovdenis/protobuf-schema/gen
+plugins:
+  - plugin: buf.build/protocolbuffers/go:v1.30.0
+    out: gen
+    opt: 
+      - paths=source_relative
+  - plugin: buf.build/bufbuild/connect-go:v1.7.0
+    out: gen
+    opt: 
+      - paths=source_relative
+  # - plugin: buf.build/bufbuild/es:v1.2.0
+  #   out: lib
+  #   opt:
+  #     - target=ts
+  # - plugin: buf.build/bufbuild/connect-es:v0.8.6
+  #   out: lib
+  #   opt:
+  #     - target=ts
+  #     - import_extension=none

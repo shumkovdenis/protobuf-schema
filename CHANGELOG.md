@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.3.0...v1.4.0) (2023-05-07)
+
+
+### Features
+
+* add CreateSessionRequest and CreateSessionResponse messages and SessionService with CreateSession method to handle session creation ([f1ebe05](https://github.com/shumkovdenis/protobuf-schema/commit/f1ebe05141006dab00738ff5833a7d5c1df5e8d3))
+
 ## [1.3.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.2.1...v1.3.0) (2023-05-07)
 
 

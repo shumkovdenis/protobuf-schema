@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.0.0...v1.1.0) (2023-05-07)
+
+
+### Features
+
+* add game_id field to GetBalanceRequest message to support game-specific balance requests ([b44bec3](https://github.com/shumkovdenis/protobuf-schema/commit/b44bec369b52bb2ea8a1d36990193435d2f9e3b5))
+* remove unused fields from GetBalanceRequest message to simplify the message definition ([a936123](https://github.com/shumkovdenis/protobuf-schema/commit/a936123572e9322c500c93ddd4e5cec3a0212235))
+
+
+### Bug Fixes
+
+* add platform_id and operator_id fields to GetBalanceRequest message to support multi-tenant architecture ([b75afe2](https://github.com/shumkovdenis/protobuf-schema/commit/b75afe26f724d027c497e308400dde58c8d777c4))
+
 ## 1.0.0 (2023-05-07)
 
 

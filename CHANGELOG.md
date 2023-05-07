@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/shumkovdenis/protobuf-schema/compare/v1.2.0...v1.2.1) (2023-05-07)
+
+
+### Bug Fixes
+
+* add write permission to packages to enable publishing of packages to GitHub Packages registry ([92aa0c4](https://github.com/shumkovdenis/protobuf-schema/commit/92aa0c40e28d80c7883967576cab74526aedb8f2))
+
 ## [1.2.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.1.0...v1.2.0) (2023-05-07)
 
 

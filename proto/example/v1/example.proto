@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package example.v1;
+
+message CallRequest {
+  string message = 1;
+}
+
+message CallResponse {
+    string content = 1;
+}
+
+service IntegrationService {
+  rpc Call(CallRequest) returns (CallResponse);
+}

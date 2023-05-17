@@ -3,5 +3,5 @@ syntax = "proto3";
 package example.v1;
 
 message RetryInfo {
-    string count = 1;
+    int32 count = 1;
 }

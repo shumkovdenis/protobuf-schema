@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.5.0...v1.6.0) (2023-05-17)
+
+
+### Features
+
+* Add RetryInfo message to error_details.proto ([ed6065d](https://github.com/shumkovdenis/protobuf-schema/commit/ed6065d35b761d088c1eca10a6f1f7236bce22f5))
+* **proto:** update RetryInfo count field to use int32 ([f57f4f2](https://github.com/shumkovdenis/protobuf-schema/commit/f57f4f21fea3f81276d468336301d05b0ca78e85))
+
 ## [1.5.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.4.0...v1.5.0) (2023-05-16)
 
 

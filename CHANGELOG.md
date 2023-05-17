@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.7.0...v1.8.0) (2023-05-17)
+
+
+### Features
+
+* Rename IntegrationService to ExampleService in example.proto ([7772fa4](https://github.com/shumkovdenis/protobuf-schema/commit/7772fa4b189c29d398c9495e427aa9fe364aeea9))
+* **workflow:** comment out buf-breaking-action in protobuf.yaml ([26ca423](https://github.com/shumkovdenis/protobuf-schema/commit/26ca4236e5fd67aa251ccf199c6312b8fbb6e39f))
+
 ## [1.7.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.6.0...v1.7.0) (2023-05-17)
 
 

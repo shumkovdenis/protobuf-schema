@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.6.0...v1.7.0) (2023-05-17)
+
+
+### Features
+
+* **proto:** add timeout to RetryInfo in error_details.proto ([3f39508](https://github.com/shumkovdenis/protobuf-schema/commit/3f39508e60e092c7caefdaaac7c50895bb6d6130))
+
 ## [1.6.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.5.0...v1.6.0) (2023-05-17)
 
 

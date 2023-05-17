@@ -4,4 +4,5 @@ package example.v1;
 
 message RetryInfo {
     int32 count = 1;
+    int32 timeout = 2;
 }

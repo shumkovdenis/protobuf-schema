@@ -10,6 +10,6 @@ message CallResponse {
     string content = 1;
 }
 
-service IntegrationService {
+service ExampleService {
   rpc Call(CallRequest) returns (CallResponse);
 }

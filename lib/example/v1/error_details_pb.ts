@@ -11,9 +11,9 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export class RetryInfo extends Message<RetryInfo> {
   /**
-   * @generated from field: string count = 1;
+   * @generated from field: int32 count = 1;
    */
-  count = "";
+  count = 0;
 
   constructor(data?: PartialMessage<RetryInfo>) {
     super();
@@ -23,7 +23,7 @@ export class RetryInfo extends Message<RetryInfo> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "example.v1.RetryInfo";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "count", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RetryInfo {

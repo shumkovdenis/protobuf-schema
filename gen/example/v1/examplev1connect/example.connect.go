@@ -21,8 +21,8 @@ import (
 const _ = connect_go.IsAtLeastVersion0_1_0
 
 const (
-	// IntegrationServiceName is the fully-qualified name of the IntegrationService service.
-	IntegrationServiceName = "example.v1.IntegrationService"
+	// ExampleServiceName is the fully-qualified name of the ExampleService service.
+	ExampleServiceName = "example.v1.ExampleService"
 )
 
 // These constants are the fully-qualified names of the RPCs defined in this package. They're
@@ -33,66 +33,66 @@ const (
 // reflection-formatted method names, remove the leading slash and convert the remaining slash to a
 // period.
 const (
-	// IntegrationServiceCallProcedure is the fully-qualified name of the IntegrationService's Call RPC.
-	IntegrationServiceCallProcedure = "/example.v1.IntegrationService/Call"
+	// ExampleServiceCallProcedure is the fully-qualified name of the ExampleService's Call RPC.
+	ExampleServiceCallProcedure = "/example.v1.ExampleService/Call"
 )
 
-// IntegrationServiceClient is a client for the example.v1.IntegrationService service.
-type IntegrationServiceClient interface {
+// ExampleServiceClient is a client for the example.v1.ExampleService service.
+type ExampleServiceClient interface {
 	Call(context.Context, *connect_go.Request[v1.CallRequest]) (*connect_go.Response[v1.CallResponse], error)
 }
 
-// NewIntegrationServiceClient constructs a client for the example.v1.IntegrationService service. By
+// NewExampleServiceClient constructs a client for the example.v1.ExampleService service. By
 // default, it uses the Connect protocol with the binary Protobuf Codec, asks for gzipped responses,
 // and sends uncompressed requests. To use the gRPC or gRPC-Web protocols, supply the
 // connect.WithGRPC() or connect.WithGRPCWeb() options.
 //
 // The URL supplied here should be the base URL for the Connect or gRPC server (for example,
 // http://api.acme.com or https://acme.com/grpc).
-func NewIntegrationServiceClient(httpClient connect_go.HTTPClient, baseURL string, opts ...connect_go.ClientOption) IntegrationServiceClient {
+func NewExampleServiceClient(httpClient connect_go.HTTPClient, baseURL string, opts ...connect_go.ClientOption) ExampleServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
-	return &integrationServiceClient{
+	return &exampleServiceClient{
 		call: connect_go.NewClient[v1.CallRequest, v1.CallResponse](
 			httpClient,
-			baseURL+IntegrationServiceCallProcedure,
+			baseURL+ExampleServiceCallProcedure,
 			opts...,
 		),
 	}
 }
 
-// integrationServiceClient implements IntegrationServiceClient.
-type integrationServiceClient struct {
+// exampleServiceClient implements ExampleServiceClient.
+type exampleServiceClient struct {
 	call *connect_go.Client[v1.CallRequest, v1.CallResponse]
 }
 
-// Call calls example.v1.IntegrationService.Call.
-func (c *integrationServiceClient) Call(ctx context.Context, req *connect_go.Request[v1.CallRequest]) (*connect_go.Response[v1.CallResponse], error) {
+// Call calls example.v1.ExampleService.Call.
+func (c *exampleServiceClient) Call(ctx context.Context, req *connect_go.Request[v1.CallRequest]) (*connect_go.Response[v1.CallResponse], error) {
 	return c.call.CallUnary(ctx, req)
 }
 
-// IntegrationServiceHandler is an implementation of the example.v1.IntegrationService service.
-type IntegrationServiceHandler interface {
+// ExampleServiceHandler is an implementation of the example.v1.ExampleService service.
+type ExampleServiceHandler interface {
 	Call(context.Context, *connect_go.Request[v1.CallRequest]) (*connect_go.Response[v1.CallResponse], error)
 }
 
-// NewIntegrationServiceHandler builds an HTTP handler from the service implementation. It returns
-// the path on which to mount the handler and the handler itself.
+// NewExampleServiceHandler builds an HTTP handler from the service implementation. It returns the
+// path on which to mount the handler and the handler itself.
 //
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
-func NewIntegrationServiceHandler(svc IntegrationServiceHandler, opts ...connect_go.HandlerOption) (string, http.Handler) {
+func NewExampleServiceHandler(svc ExampleServiceHandler, opts ...connect_go.HandlerOption) (string, http.Handler) {
 	mux := http.NewServeMux()
-	mux.Handle(IntegrationServiceCallProcedure, connect_go.NewUnaryHandler(
-		IntegrationServiceCallProcedure,
+	mux.Handle(ExampleServiceCallProcedure, connect_go.NewUnaryHandler(
+		ExampleServiceCallProcedure,
 		svc.Call,
 		opts...,
 	))
-	return "/example.v1.IntegrationService/", mux
+	return "/example.v1.ExampleService/", mux
 }
 
-// UnimplementedIntegrationServiceHandler returns CodeUnimplemented from all methods.
-type UnimplementedIntegrationServiceHandler struct{}
+// UnimplementedExampleServiceHandler returns CodeUnimplemented from all methods.
+type UnimplementedExampleServiceHandler struct{}
 
-func (UnimplementedIntegrationServiceHandler) Call(context.Context, *connect_go.Request[v1.CallRequest]) (*connect_go.Response[v1.CallResponse], error) {
-	return nil, connect_go.NewError(connect_go.CodeUnimplemented, errors.New("example.v1.IntegrationService.Call is not implemented"))
+func (UnimplementedExampleServiceHandler) Call(context.Context, *connect_go.Request[v1.CallRequest]) (*connect_go.Response[v1.CallResponse], error) {
+	return nil, connect_go.NewError(connect_go.CodeUnimplemented, errors.New("example.v1.ExampleService.Call is not implemented"))
 }

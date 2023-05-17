@@ -19,89 +19,89 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	IntegrationService_Call_FullMethodName = "/example.v1.IntegrationService/Call"
+	ExampleService_Call_FullMethodName = "/example.v1.ExampleService/Call"
 )
 
-// IntegrationServiceClient is the client API for IntegrationService service.
+// ExampleServiceClient is the client API for ExampleService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type IntegrationServiceClient interface {
+type ExampleServiceClient interface {
 	Call(ctx context.Context, in *CallRequest, opts ...grpc.CallOption) (*CallResponse, error)
 }
 
-type integrationServiceClient struct {
+type exampleServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewIntegrationServiceClient(cc grpc.ClientConnInterface) IntegrationServiceClient {
-	return &integrationServiceClient{cc}
+func NewExampleServiceClient(cc grpc.ClientConnInterface) ExampleServiceClient {
+	return &exampleServiceClient{cc}
 }
 
-func (c *integrationServiceClient) Call(ctx context.Context, in *CallRequest, opts ...grpc.CallOption) (*CallResponse, error) {
+func (c *exampleServiceClient) Call(ctx context.Context, in *CallRequest, opts ...grpc.CallOption) (*CallResponse, error) {
 	out := new(CallResponse)
-	err := c.cc.Invoke(ctx, IntegrationService_Call_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, ExampleService_Call_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// IntegrationServiceServer is the server API for IntegrationService service.
-// All implementations must embed UnimplementedIntegrationServiceServer
+// ExampleServiceServer is the server API for ExampleService service.
+// All implementations must embed UnimplementedExampleServiceServer
 // for forward compatibility
-type IntegrationServiceServer interface {
+type ExampleServiceServer interface {
 	Call(context.Context, *CallRequest) (*CallResponse, error)
-	mustEmbedUnimplementedIntegrationServiceServer()
+	mustEmbedUnimplementedExampleServiceServer()
 }
 
-// UnimplementedIntegrationServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedIntegrationServiceServer struct {
+// UnimplementedExampleServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedExampleServiceServer struct {
 }
 
-func (UnimplementedIntegrationServiceServer) Call(context.Context, *CallRequest) (*CallResponse, error) {
+func (UnimplementedExampleServiceServer) Call(context.Context, *CallRequest) (*CallResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Call not implemented")
 }
-func (UnimplementedIntegrationServiceServer) mustEmbedUnimplementedIntegrationServiceServer() {}
+func (UnimplementedExampleServiceServer) mustEmbedUnimplementedExampleServiceServer() {}
 
-// UnsafeIntegrationServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to IntegrationServiceServer will
+// UnsafeExampleServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ExampleServiceServer will
 // result in compilation errors.
-type UnsafeIntegrationServiceServer interface {
-	mustEmbedUnimplementedIntegrationServiceServer()
+type UnsafeExampleServiceServer interface {
+	mustEmbedUnimplementedExampleServiceServer()
 }
 
-func RegisterIntegrationServiceServer(s grpc.ServiceRegistrar, srv IntegrationServiceServer) {
-	s.RegisterService(&IntegrationService_ServiceDesc, srv)
+func RegisterExampleServiceServer(s grpc.ServiceRegistrar, srv ExampleServiceServer) {
+	s.RegisterService(&ExampleService_ServiceDesc, srv)
 }
 
-func _IntegrationService_Call_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ExampleService_Call_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CallRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(IntegrationServiceServer).Call(ctx, in)
+		return srv.(ExampleServiceServer).Call(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: IntegrationService_Call_FullMethodName,
+		FullMethod: ExampleService_Call_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IntegrationServiceServer).Call(ctx, req.(*CallRequest))
+		return srv.(ExampleServiceServer).Call(ctx, req.(*CallRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// IntegrationService_ServiceDesc is the grpc.ServiceDesc for IntegrationService service.
+// ExampleService_ServiceDesc is the grpc.ServiceDesc for ExampleService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var IntegrationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "example.v1.IntegrationService",
-	HandlerType: (*IntegrationServiceServer)(nil),
+var ExampleService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "example.v1.ExampleService",
+	HandlerType: (*ExampleServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Call",
-			Handler:    _IntegrationService_Call_Handler,
+			Handler:    _ExampleService_Call_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -7,13 +7,13 @@ import { CallRequest, CallResponse } from "./example_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * @generated from service example.v1.IntegrationService
+ * @generated from service example.v1.ExampleService
  */
-export const IntegrationService = {
-  typeName: "example.v1.IntegrationService",
+export const ExampleService = {
+  typeName: "example.v1.ExampleService",
   methods: {
     /**
-     * @generated from rpc example.v1.IntegrationService.Call
+     * @generated from rpc example.v1.ExampleService.Call
      */
     call: {
       name: "Call",

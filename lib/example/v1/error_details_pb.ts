@@ -15,6 +15,11 @@ export class RetryInfo extends Message<RetryInfo> {
    */
   count = 0;
 
+  /**
+   * @generated from field: int32 timeout = 2;
+   */
+  timeout = 0;
+
   constructor(data?: PartialMessage<RetryInfo>) {
     super();
     proto3.util.initPartial(data, this);
@@ -24,6 +29,7 @@ export class RetryInfo extends Message<RetryInfo> {
   static readonly typeName = "example.v1.RetryInfo";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "timeout", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RetryInfo {

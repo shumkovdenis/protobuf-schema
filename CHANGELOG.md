@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.4.0...v1.5.0) (2023-05-16)
+
+
+### Features
+
+* **example.proto:** add example.proto file with CallRequest, CallResponse and IntegrationService definitions to support integration with external services ([d56dd14](https://github.com/shumkovdenis/protobuf-schema/commit/d56dd14abaf475675074b1004bf536dd801f3af4))
+
 ## [1.4.0](https://github.com/shumkovdenis/protobuf-schema/compare/v1.3.0...v1.4.0) (2023-05-07)
 
 

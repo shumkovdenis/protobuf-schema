@@ -1,6 +1,6 @@
 {
   "name": "@shumkovdenis/protobuf-schema",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "type": "module",
   "peerDependencies": {
     "@bufbuild/connect": "^0.8.6",
